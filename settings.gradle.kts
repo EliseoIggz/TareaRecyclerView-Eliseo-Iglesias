@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TareaRecyclerView"
+rootProject.name = "TareaRecyclerView-Eliseo-Iglesias"
 include(":app")
  
