@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
         return listaContactos.size();
     }
 
-    public static class ContactoViewHolder extends RecyclerView.ViewHolder {
+    public class ContactoViewHolder extends RecyclerView.ViewHolder {
         ImageView foto;
         TextView nombre, apellidos, email, telefono;
 
@@ -51,6 +53,15 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
             apellidos = itemView.findViewById(R.id.contacto_apellidos);
             email = itemView.findViewById(R.id.contacto_email);
             telefono = itemView.findViewById(R.id.contacto_telefono);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(view.getContext(),
+                            listaContactos.get(getAdapterPosition()).toString(),
+                            Toast.LENGTH_LONG).show();
+                }
+            });
         }
     }
 }

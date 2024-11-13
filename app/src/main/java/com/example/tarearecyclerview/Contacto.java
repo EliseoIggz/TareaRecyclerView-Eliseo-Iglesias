@@ -54,4 +54,9 @@ public class Contacto {
     public void setFoto(int foto) {
         this.foto = foto;
     }
+
+    @Override
+    public String toString() {
+        return "Contacto: " + nombre + " " + apellidos + " Email: " + email + " Tlf: " + telefono;
+    }
 }
